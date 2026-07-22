@@ -1,175 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3V3983YWL7"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3V3983YWL7');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} Download App - Official ProSafe Yono Game 2026</title>
-    <meta name="description" content="Download {{ page.title }} APK officially from ProSafe Yono Game 2026. Secure, verified direct links.">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}All Yono Games Download & Get Promo Code Bonus 2026</title>
     
     <style>
-        /* Modern White & Blue Color Theme */
+        /* Pure White Theme Layout - Tight Spacing Controls */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        body { background-color: #f3f4f6; color: #111827; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+        html { scroll-behavior: smooth; }
+        body { background-color: #f3f4f6; color: #111827; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
         
-        .vip-master-container { width: 100%; max-width: 600px; background: #ffffff; display: flex; flex-direction: column; min-height: 100vh; box-shadow: 0 0 15px rgba(0,0,0,0.05); }
-        .vip-content-body { flex-grow: 1; display: flex; flex-direction: column; }
+        /* Navigation Bar Design with Logo and Site Name Text Inline */
+        header { background: #ffffff; border-bottom: 2px solid #2563eb; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .nav-container { max-width: 600px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 6px 14px; }
+        .nav-left-brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+        .logo-frame-img { height: 38px; width: auto; object-fit: contain; }
+        .site-brand-name { font-size: 16px; font-weight: 800; color: #1e3a8a; letter-spacing: -0.2px; }
         
-        .vip-brand-header { background: #1e3a8a; color: #ffffff; padding: 14px; text-align: center; font-size: 18px; font-weight: 900; letter-spacing: 0.8px; text-transform: uppercase; border-bottom: 3px solid #2563eb; }
-        .vip-brand-header a { color: #ffffff; text-decoration: none; }
+        /* Menu Vector Toggle Line Icon (|||) */
+        .menu-toggle-btn { background: none; border: none; color: #2563eb; font-size: 20px; font-weight: bold; cursor: pointer; display: flex; align-items: center; letter-spacing: 1px; padding: 4px; }
+
+        /* Sidebar Navigation Interface with Upgraded Links */
+        .sidebar-panel { position: fixed; top: 0; right: -280px; width: 260px; height: 100vh; background: #ffffff; box-shadow: -4px 0 20px rgba(0,0,0,0.08); z-index: 200; transition: right 0.25s linear; padding: 20px; border-left: 2px solid #2563eb; }
+        .sidebar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #e5e7eb; padding-bottom: 10px; }
+        .sidebar-title { font-size: 15px; font-weight: 700; color: #1e3a8a; text-transform: uppercase; }
+        .sidebar-close { background: none; border: none; color: #111827; font-size: 24px; cursor: pointer; }
+        .sidebar-link { display: block; color: #374151; font-size: 14px; font-weight: 600; text-decoration: none; padding: 10px 12px; border-radius: 6px; margin-bottom: 8px; background: #f3f4f6; border: 1px solid transparent; cursor: pointer; text-align: left; width: 100%; }
+        .sidebar-link:hover { background: #eff6ff; border-color: #bfdbfe; color: #2563eb; }
+
+        /* Content Layer Wrap Frame */
+        main { flex: 1; width: 100%; max-width: 600px; margin: 0 auto; padding: 12px; }
+
+        /* Compact Search Field Box */
+        .search-box-wrapper { margin-bottom: 12px; position: relative; }
+        .search-input-field { width: 100%; padding: 11px 14px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 10px; color: #111827; font-size: 14px; outline: none; }
+        .search-input-field:focus { border-color: #2563eb; }
+
+        /* Max Rummy Special Spotlight Feature Card Layout with Enhanced Contrast */
+        .spotlight-launch-container { background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%); border: 2px solid #2563eb; border-radius: 14px; padding: 14px; margin-bottom: 14px; display: flex; align-items: center; gap: 14px; box-shadow: 0 4px 12px rgba(37,99,235,0.08); position: relative; overflow: hidden; }
+        .spotlight-icon-node { width: 68px; height: 68px; border-radius: 14px; object-fit: cover; border: 1px solid #bfdbfe; }
+        .spotlight-meta-info { flex: 1; display: flex; flex-direction: column; gap: 2px; }
         
-        .vip-search-wrapper { padding: 10px 12px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; display: flex; gap: 6px; }
-        .vip-search-input { flex: 1; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; outline: none; background: #ffffff; }
-        .vip-search-btn { background: #2563eb; color: white; border: none; padding: 0 14px; border-radius: 6px; font-weight: 700; cursor: pointer; }
-
-        .vip-breadcrumb { padding: 12px 14px 2px 14px; font-size: 11.5px; color: #64748b; font-weight: 600; }
-        .vip-breadcrumb a { color: #64748b; text-decoration: none; }
-
-        .vip-main-presenter { padding: 12px 14px; border-bottom: 4px solid #f1f5f9; }
-        .vip-h1-headline { font-size: 19px; font-weight: 800; color: #1f2937; line-height: 1.3; margin-bottom: 2px; }
-        .vip-status-lbl { font-size: 10.5px; font-weight: 700; color: #94a3b8; text-transform: uppercase; margin-bottom: 12px; display: block; }
-
-        /* TWO-COLUMN SIDE-BY-SIDE GRID LAYOUT */
-        .vip-split-flex { display: grid; grid-template-columns: 130px 1fr; gap: 12px; margin-bottom: 12px; align-items: start; }
+        /* High Contrast AAA Compliant New Badge Styling */
+        .spotlight-badge-flex { display: flex; align-items: center; gap: 6px; }
+        .spotlight-new-badge { background: #990000; color: #ffffff; font-size: 11px; font-weight: 900; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; animation: pulseGlowEffect 1.4s infinite ease-in-out; }
+        @keyframes pulseGlowEffect { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(153,0,0,0.5); } 50% { transform: scale(1.03); box-shadow: 0 0 8px 2px rgba(153,0,0,0.3); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(153,0,0,0); } }
         
-        /* Left Column Structure */
-        .vip-left-action-column { display: flex; flex-direction: column; gap: 8px; align-items: center; }
-        .vip-main-avatar { width: 120px; height: 120px; border-radius: 18px; object-fit: cover; border: 1px solid #e2e8f0; }
-        
-        /* Symmetric Buttons */
-        .vip-side-btn-download { width: 100%; height: 36px; display: flex; align-items: center; justify-content: center; background: #0066ff; color: white; text-decoration: none; font-size: 11px; font-weight: 800; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.3px; box-shadow: 0 2px 4px rgba(0,102,255,0.3); text-align: center; border-bottom: 3px solid #0044cc; }
-        .vip-side-btn-telegram { width: 100%; height: 36px; display: flex; align-items: center; justify-content: center; background: #00c853; color: white; text-decoration: none; font-size: 11px; font-weight: 800; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.3px; box-shadow: 0 2px 4px rgba(0,200,83,0.2); text-align: center; border-bottom: 3px solid #009624; }
+        .spotlight-launch-tag { color: #b91c1c; font-size: 11px; font-weight: 800; letter-spacing: 0.3px; }
+        .spotlight-title-text { font-size: 17px; font-weight: 800; color: #1e3a8a; }
+        .spotlight-action-cta { background: #2563eb; color: #ffffff; font-size: 11.5px; font-weight: 800; text-transform: uppercase; text-decoration: none; padding: 8px 14px; border-radius: 8px; box-shadow: 0 3px 6px rgba(37,99,235,0.2); }
 
-        /* Right Column Table */
-        .vip-meta-table { width: 100%; border-collapse: collapse; background: #f8fafc; border-radius: 8px; overflow: hidden; font-size: 12px; border: 1px solid #e2e8f0; }
-        .vip-meta-table td { padding: 6.5px 10px; border-bottom: 1px solid #e2e8f0; }
-        .vip-meta-table tr:last-child td { border-bottom: none; }
-        .vip-td-label { color: #475569; font-weight: 700; text-align: left; }
-        .vip-td-value { color: #1e3a8a; font-weight: 700; text-align: left; }
-
-        .vip-rating-row { display: flex; align-items: center; gap: 6px; justify-content: center; font-size: 12.5px; color: #64748b; font-weight: 600; margin-top: 10px; }
-        .vip-stars-gold { color: #f59e0b; font-size: 14px; }
-        .vip-blue-score { color: #2563eb; font-weight: 800; }
-
-        /* SEO Tags Cloud */
-        .vip-seo-tags-cloud { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; padding: 12px 14px; border-bottom: 4px solid #f1f5f9; background: #ffffff; }
-        .vip-seo-badge-link { text-decoration: none; color: white; font-size: 10px; font-weight: 800; padding: 5px 12px; border-radius: 20px; text-transform: uppercase; display: inline-block; }
-        .vip-seo-badge-link.col-pink { background: #f472b6; }
-        .vip-seo-badge-link.col-purple { background: #a855f7; }
-        .vip-seo-badge-link.col-magenta { background: #ec4899; }
-        .vip-seo-badge-link.col-blue { background: #3b82f6; }
-        .vip-seo-badge-link.col-green { background: #10b981; }
-
-        /* Description Block */
-        .vip-desc-block { padding: 14px; border-bottom: 4px solid #f1f5f9; }
-        .vip-section-heading { font-size: 13.5px; font-weight: 800; color: #475569; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; }
-        .vip-section-heading::after { content: ''; flex: 1; margin-left: 10px; height: 1.5px; background: #e2e8f0; }
-        .vip-desc-paragraph { font-size: 13px; color: #334155; line-height: 1.5; text-align: left; padding: 0 2px; }
-
-        /* RELATED APPS MATRIX */
-        .vip-related-block { padding: 14px; background: #ffffff; }
-        .vip-related-grid-layout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding-top: 4px; }
-        .vip-related-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 8px 4px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-between; }
-        .vip-related-thumb { width: 54px; height: 54px; border-radius: 10px; object-fit: cover; border: 1px solid #f1f5f9; }
-        .vip-related-title { font-size: 10px; font-weight: 700; color: #334155; margin-top: 5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%; text-transform: uppercase; }
-        .vip-related-btn { display: block; width: 95%; background: #2563eb; color: white; text-decoration: none; font-size: 9.5px; font-weight: 800; padding: 5px 0; border-radius: 4px; text-transform: uppercase; margin-top: 4px; text-align: center; }
-
-        /* Home Page Grid Overrides */
-        .game-display-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 12px; }
+        /* Standard Game Presentation Box Matrix */
+        .game-display-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
         .game-card-node { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 10px 4px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-between; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
         .game-app-icon { width: 64px; height: 64px; border-radius: 14px; object-fit: cover; border: 1px solid #e5e7eb; }
         .game-app-name { font-size: 11.5px; font-weight: 700; color: #1f2937; margin-top: 6px; height: 30px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.25; }
         .game-download-btn { display: inline-block; width: 88%; background: #2563eb; color: #ffffff; font-size: 10.5px; font-weight: 800; text-transform: uppercase; text-decoration: none; padding: 6px 0; border-radius: 6px; margin-top: 6px; }
+                /* Dynamic Legal Content View Box Styling */
+        .legal-display-card { background: #ffffff; border-radius: 12px; padding: 16px; margin: 12px 0; border: 2px solid #2563eb; display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .legal-card-title { font-size: 16px; font-weight: 800; color: #1e3a8a; margin-bottom: 10px; border-bottom: 1px solid #e5e7eb; padding-bottom: 6px; display: flex; justify-content: space-between; align-items: center; }
+        .legal-close-btn { background: #ef4444; color: white; border: none; padding: 2px 8px; font-size: 11px; font-weight: 700; border-radius: 4px; cursor: pointer; }
+        .legal-card-body { font-size: 13px; color: #374151; line-height: 1.5; text-align: justify; white-space: pre-line; }
 
-        .vip-footer-node { background: #1a202c; color: #a0aec0; text-align: center; padding: 16px 14px; font-size: 11px; line-height: 1.4; border-top: 3px solid #2563eb; width: 100%; }
+        /* Interactive Footer Link Bar Layout */
+        .footer-legal-nav { display: flex; justify-content: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+        .footer-legal-btn { background: none; border: none; color: #2563eb; font-size: 12px; font-weight: 700; cursor: pointer; text-decoration: underline; }
+
+        /* Live Activity Toast Layout */
+        #win-notification-toast { position: fixed; top: 75px; right: -320px; background: linear-gradient(90deg, #1e293b 0%, #1e3a8a 100%); color: #ffffff; padding: 10px 14px; border-radius: 12px; display: flex; align-items: center; gap: 12px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3); z-index: 1000; transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid rgba(255,255,255,0.1); width: 280px; }
+        .toast-game-avatar { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; border: 1.5px solid #fbbf24; }
+        .toast-meta-content { flex: 1; font-size: 12px; line-height: 1.4; position: relative; padding-right: 14px; }
+        .toast-user-string { font-weight: 800; color: #fbbf24; }
+        .toast-uid-string { color: #cbd5e1; font-size: 11px; }
+        .toast-amount-string { color: #4ade80; font-weight: 800; font-size: 13px; }
+        .toast-dismiss-chokadi { position: absolute; top: -2px; right: -6px; background: none; border: none; color: #cbd5e1; font-size: 14px; font-weight: 700; cursor: pointer; padding: 2px; line-height: 1; }
+
+        .back-to-top-btn { position: fixed; bottom: 80px; right: 16px; width: 40px; height: 40px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 50%; display: none; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); cursor: pointer; z-index: 150; }
+        .telegram-float-anchor { position: fixed; bottom: 20px; right: 16px; width: 46px; height: 46px; background: #0284c7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 10px rgba(2,132,199,0.25); border: 1px solid #38bdf8; z-index: 150; text-decoration: none; }
+        footer { background: #ffffff; border-top: 1px solid #e5e7eb; padding: 16px 14px; text-align: center; width: 100%; }
+        .footer-text { font-size: 11.5px; color: #4b5563; font-weight: 500; }
+
+        /* VIP Single Page Styles */
+        .vip-breadcrumb { padding: 4px 0 10px 0; font-size: 11.5px; color: #64748b; font-weight: 600; }
+        .vip-breadcrumb a { color: #2563eb; text-decoration: none; }
+        .vip-main-presenter { padding: 12px 0; border-bottom: 2px solid #f1f5f9; }
+        .vip-h1-headline { font-size: 18px; font-weight: 800; color: #1f2937; line-height: 1.3; margin-bottom: 2px; }
+        .vip-status-lbl { font-size: 10.5px; font-weight: 700; color: #94a3b8; text-transform: uppercase; margin-bottom: 12px; display: block; }
+        .vip-split-flex { display: grid; grid-template-columns: 120px 1fr; gap: 12px; margin-bottom: 12px; align-items: start; }
+        .vip-left-action-column { display: flex; flex-direction: column; gap: 8px; align-items: center; }
+        .vip-main-avatar { width: 110px; height: 110px; border-radius: 18px; object-fit: cover; border: 1px solid #e2e8f0; }
+        .vip-side-btn-download { width: 100%; height: 36px; display: flex; align-items: center; justify-content: center; background: #0066ff; color: white; text-decoration: none; font-size: 11px; font-weight: 800; border-radius: 6px; text-transform: uppercase; text-align: center; border-bottom: 3px solid #0044cc; }
+        .vip-side-btn-telegram { width: 100%; height: 36px; display: flex; align-items: center; justify-content: center; background: #00c853; color: white; text-decoration: none; font-size: 11px; font-weight: 800; border-radius: 6px; text-transform: uppercase; text-align: center; border-bottom: 3px solid #009624; }
+        .vip-meta-table { width: 100%; border-collapse: collapse; background: #f8fafc; border-radius: 8px; overflow: hidden; font-size: 12px; border: 1px solid #e2e8f0; }
+        .vip-meta-table td { padding: 6px 8px; border-bottom: 1px solid #e2e8f0; }
+        .vip-td-label { color: #475569; font-weight: 700; }
+        .vip-td-value { color: #1e3a8a; font-weight: 700; }
+        .vip-desc-block { padding: 14px 0; }
+        .vip-section-heading { font-size: 13.5px; font-weight: 800; color: #475569; text-transform: uppercase; margin-bottom: 8px; border-bottom: 2px solid #e2e8f0; padding-bottom: 4px; }
+        .vip-desc-paragraph { font-size: 13px; color: #334155; line-height: 1.5; }
     </style>
 </head>
 <body>
-    <div class="vip-master-container">
-        <div class="vip-content-body">
-            
-            <div class="vip-brand-header">
-                <a href="{{ '/' | relative_url }}">PROSAFEYONOGAME</a>
+
+    <!-- Header Section (Everywhere) -->
+    <header>
+        <div class="nav-container">
+            <a href="{{ '/' | relative_url }}" class="nav-left-brand">
+                <img src="https://i.ibb.co/fdZpJswb/file-000000002aa872089a44603a2278ac14.png" class="logo-frame-img" width="38" height="38" alt="ProSafe Logo">
+                <span class="site-brand-name">PROSAFEYONOGAME</span>
+            </a>
+            <button class="menu-toggle-btn" onclick="toggleSidebarMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- Sidebar Dashboard Panel -->
+    <nav class="sidebar-panel" id="sidebarPanel">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu Options</span>
+            <button class="sidebar-close" onclick="toggleSidebarMenu()">&times;</button>
+        </div>
+        <a href="{{ '/' | relative_url }}" class="sidebar-link">🏡 Home Dashboard</a>
+        <a href="https://t.me/invitnew" target="_blank" class="sidebar-link">📢 Telegram Channel</a>
+        <button class="sidebar-link" onclick="handleLegalDisplay('privacy')">🛡️ Privacy Policy</button>
+        <button class="sidebar-link" onclick="handleLegalDisplay('terms')">📄 Terms & Conditions</button>
+        <button class="sidebar-link" onclick="handleLegalDisplay('disclaimer')">🌐 Disclaimer Portal</button>
+    </nav>
+
+    <main>
+        
+        <!-- Live Text Injection Target View Box -->
+        <div class="legal-display-card" id="legalDisplayCard">
+            <div class="legal-card-title">
+                <span id="legalTabTitle">Document Title</span>
+                <button class="legal-close-btn" onclick="closeLegalCard()">Close ✕</button>
             </div>
-
-            {% if page.url == '/' or page.url == '/index.html' %}
-                
-                <!-- Home Page Main Grid Content -->
-                <main class="game-display-grid">
-                    {{ content }}
-                </main>
-
-            {% else %}
-
-                <!-- VIP Single Game Page Layout -->
-                <div class="vip-breadcrumb">
-                    <a href="{{ '/' | relative_url }}">Home</a> / {{ page.title | upcase }} PORTAL
-                </div>
-
-                <section class="vip-main-presenter">
-                    <h1 class="vip-h1-headline">{{ page.title }} Download & Get Exclusive Rewards</h1>
-                    <span class="vip-status-lbl">Latest Stable Version</span>
-
-                    <div class="vip-split-flex">
-                        <div class="vip-left-action-column">
-                            <img src="{{ page.icon }}" class="vip-main-avatar" alt="{{ page.title }} Icon">
-                            <a href="{{ page.download_url }}" target="_blank" class="vip-side-btn-download">📥 DOWNLOAD</a>
-                            <a href="https://t.me/invitnew" target="_blank" class="vip-side-btn-telegram">🚀 TELEGRAM</a>
-                        </div>
-                        
-                        <table class="vip-meta-table">
-                            <tr><td class="vip-td-label">Developer</td><td class="vip-td-value">{{ page.title | upcase }}</td></tr>
-                            <tr><td class="vip-td-label">Updated</td><td class="vip-td-value">TODAY LAUNCH</td></tr>
-                            <tr><td class="vip-td-label">Size</td><td class="vip-td-value">{{ page.size | default: "42.5 MB" }}</td></tr>
-                            <tr><td class="vip-td-label">Version</td><td class="vip-td-value">LATEST</td></tr>
-                            <tr><td class="vip-td-label">Requirements</td><td class="vip-td-value">ANDROID</td></tr>
-                            <tr><td class="vip-td-label">Downloads</td><td class="vip-td-value">100K+</td></tr>
-                        </table>
-                    </div>
-
-                    <div class="vip-rating-row">
-                        <span class="vip-stars-gold">★★★★★</span>
-                        <span class="vip-blue-score">4.8</span>/5 (Votes: 4,120)
-                    </div>
-                </section>
-
-                <div class="vip-seo-tags-cloud">
-                    <a href="{{ '/' | relative_url }}" class="vip-seo-badge-link col-pink">Explore More Games</a>
-                    <a href="{{ '/' | relative_url }}" class="vip-seo-badge-link col-purple">Yono All App</a>
-                    <a href="{{ '/' | relative_url }}" class="vip-seo-badge-link col-magenta">Yono Rummy</a>
-                    <a href="{{ '/' | relative_url }}" class="vip-seo-badge-link col-blue">New Yono Games</a>
-                    <a href="{{ '/' | relative_url }}" class="vip-seo-badge-link col-green">{{ page.title }} APK</a>
-                </div>
-
-                <section class="vip-desc-block">
-                    <h2 class="vip-section-heading">Description</h2>
-                    <div class="vip-desc-paragraph">
-                        {{ content }}
-                    </div>
-                </section>
-
-                <!-- Automatic Related Games Grid -->
-                <section class="vip-related-block">
-                    <h2 class="vip-section-heading">Related Apps</h2>
-                    <div class="vip-related-grid-layout">
-                        {% for post in site.posts limit:6 %}
-                            {% if post.url != page.url %}
-                            <div class="vip-related-card">
-                                <img src="{{ post.icon }}" class="vip-related-thumb" alt="{{ post.title }}">
-                                <div class="vip-related-title">{{ post.title }}</div>
-                                <a href="{{ post.url | relative_url }}" class="vip-related-btn">GET APK</a>
-                            </div>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </section>
-
-            {% endif %}
-
+            <div class="legal-card-body" id="legalTabBody">Content dynamic text stream loading here...</div>
         </div>
 
-        <footer class="vip-footer-node">
-            <p>© 2026 prosafeyonogame. All rights reserved.</p>
-        </footer>
+        {% if page.url == '/' or page.url == '/index.html' %}
+
+            <!-- HOME PAGE SPECIFIC ELEMENTS -->
+            <div class="search-box-wrapper">
+                <input type="text" class="search-input-field" id="gameSearchInput" placeholder="Search premium games here..." onkeyup="filterGameGridList()">
+            </div>
+
+            <!-- Spotlight Max Rummy Banner -->
+            <section class="spotlight-launch-container">
+                <img src="https://i.ibb.co/pjS0JqJ0/IMG-20260709-090606-552.jpg" class="spotlight-icon-node" width="68" height="68" alt="Max Rummy Icon">
+                <div class="spotlight-meta-info">
+                    <div class="spotlight-badge-flex">
+                        <span class="spotlight-new-badge">⚡NEW</span>
+                        <span class="spotlight-launch-tag">🚀 JUST TODAY LAUNCHED</span>
+                    </div>
+                    <h1 class="spotlight-title-text" style="font-size: 17px; font-weight: 800; color: #1e3a8a;">Max Rummy</h1>
+                </div>
+                <a href="https://mahagames-t.com/?code=J24ERJPS4LS&t=1784427220" target="_blank" class="spotlight-action-cta">GET APK</a>
+            </section>
+
+            <!-- Dynamic Posts Grid -->
+            <section class="game-display-grid" id="masterGameGrid">
+                {{ content }}
+            </section>
+
+        {% else %}
+
+            <!-- SINGLE POST VIP PAGE -->
+            <div class="vip-breadcrumb">
+                <a href="{{ '/' | relative_url }}">Home</a> / {{ page.title | upcase }}
+            </div>
+
+            <section class="vip-main-presenter">
+                <h1 class="vip-h1-headline">{{ page.title }} Download & Get Exclusive Rewards</h1>
+                <span class="vip-status-lbl">Latest Stable Version</span>
+
+                <div class="vip-split-flex">
+                    <div class="vip-left-action-column">
+                        <img src="{{ page.icon }}" class="vip-main-avatar" alt="{{ page.title }}">
+                        <a href="{{ page.download_url }}" target="_blank" class="vip-side-btn-download">📥 DOWNLOAD</a>
+                        <a href="https://t.me/invitnew" target="_blank" class="vip-side-btn-telegram">🚀 TELEGRAM</a>
+                    </div>
+                    
+                    <table class="vip-meta-table">
+                        <tr><td class="vip-td-label">Developer</td><td class="vip-td-value">{{ page.title | upcase }}</td></tr>
+                        <tr><td class="vip-td-label">Updated</td><td class="vip-td-value">TODAY LAUNCH</td></tr>
+                        <tr><td class="vip-td-label">Size</td><td class="vip-td-value">{{ page.size | default: "40.5 MB" }}</td></tr>
+                        <tr><td class="vip-td-label">Version</td><td class="vip-td-value">LATEST</td></tr>
+                        <tr><td class="vip-td-label">Requirements</td><td class="vip-td-value">ANDROID</td></tr>
+                    </table>
+                </div>
+            </section>
+
+            <section class="vip-desc-block">
+                <h2 class="vip-section-heading">Description</h2>
+                <div class="vip-desc-paragraph">
+                    {{ content }}
+                </div>
+            </section>
+
+        {% endif %}
+
+    </main>
+        <!-- Footer Section (Everywhere) -->
+    <footer>
+        <nav class="footer-legal-nav">
+            <button class="footer-legal-btn" onclick="handleLegalDisplay('privacy')">Privacy Policy</button>
+            <button class="footer-legal-btn" onclick="handleLegalDisplay('terms')">Terms & Conditions</button>
+            <button class="footer-legal-btn" onclick="handleLegalDisplay('disclaimer')">Disclaimer</button>
+        </nav>
+        <p class="footer-text">&copy; 2026 ProSafe Yono Game Network. All Rights Reserved.<br>Fast Cash Out Verification Active.</p>
+    </footer>
+
+    <!-- Fixed Floating Anchors -->
+    <button class="back-to-top-btn" id="scrollTopBtn" onclick="scrollToTopDashboard()">⬆</button>
+    <a href="https://t.me/invitnew" target="_blank" class="telegram-float-anchor">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.9 2.1a1 1 0 0 0-1.05-.15l-18 7.5a1 1 0 0 0 .1 1.88l4.42 1.38 3.13 6.27a1 1 0 0 0 1.63.22l2.67-3.2 4.47 3.35a1 1 0 0 0 1.54-.62l3.5-15.5a1 1 0 0 0-.41-.75zM16.7 8.5l-6.2 5.3a.5.5 0 0 1-.74-.03l-2.43-3.41L18 6a.2.2 0 0 1 .23.32z" fill="#ffffff"/>
+        </svg>
+    </a>
+
+    <!-- Live Winner Notification Toast -->
+    <div id="win-notification-toast">
+        <img src="https://i.ibb.co/pjS0JqJ0/IMG-20260709-090606-552.jpg" id="toast-icon-target" class="toast-game-avatar" width="44" height="44" alt="Winning Game Icon">
+        <div class="toast-meta-content">
+            <button class="toast-dismiss-chokadi" onclick="dismissToastManually()">✕</button>
+            <span class="toast-user-string" id="toast-user-target">Abh***jit</span> 
+            <span class="toast-uid-string">(UID:<span id="toast-uid-target">26746767</span>)</span><br>
+            Win: <span class="toast-amount-string" id="toast-amount-target">3,000.00</span>
+        </div>
     </div>
+
+    <!-- Complete Platform Operational Logic Script Layer -->
+    <script>
+        const legalDataRegistry = {
+            privacy: {
+                title: "🛡️ Privacy Policy Document",
+                text: `Welcome to prosafeyonogame 2026. Your privacy is important to us. This Privacy Policy explains how we handle your information when you visit our website.\n\nInformation We Do Not Collect\nAt prosafeyonogame 2026, we do not collect any personal information from users.\n\nCookies\nOur website may use cookies to enhance user experience.\n\nThird-Party Services\nOur website may contain links to third-party sites.\n\nChanges to This Privacy Policy\nWe may update our Privacy Policy from time to time.`
+            },
+            terms: {
+                title: "📄 Terms & Conditions Agreement",
+                text: `Welcome to prosafeyonogame 2026. By accessing or using our website, you agree to comply with and be bound by the following terms and conditions.\n\nUse of the Website\nYou agree to use the website for lawful purposes only.\n\nIntellectual Property\nAll content, trademarks, and other intellectual property on this website are the property of All Yono App.\n\nLimitation of Liability\nTo the fullest extent permitted by law, All Yono App shall not be liable for any damages.`
+            },
+            disclaimer: {
+                title: "🌐 Legal Liability Disclaimer",
+                text: `The information provided by prosafeyonogame 2026 is for general informational purposes only.\n\nFinancial Risk\nEngaging in gaming and betting may involve financial risks. Exercise caution.\n\nNo Liability\nUnder no circumstances shall All Yono App be liable for any loss or damage.`
+            }
+        };
+
+        const livePlatformWinnersPool = [
+            { name: "Abh***jit", uid: "26746767", amount: "3,000.00", icon: "https://i.ibb.co/pjS0JqJ0/IMG-20260709-090606-552.jpg" }, 
+            { name: "Raj***esh", uid: "84920481", amount: "1,500.00", icon: "https://i.ibb.co/Q7Wr5bhm/IMG-20260604-173703-578.jpg" }, 
+            { name: "Vik***as", icon: "https://i.ibb.co/W4RkkgnW/IMG-20260528-165717-352.jpg", uid: "55610293", amount: "4,800.00" }
+        ];
+
+        let toastTimerTracker;
+
+        function toggleSidebarMenu() {
+            const sidebar = document.getElementById('sidebarPanel');
+            sidebar.style.right = (sidebar.style.right === "0px") ? "-280px" : "0px";
+        }
+
+        function handleLegalDisplay(tabKey) {
+            const legalCard = document.getElementById('legalDisplayCard');
+            const record = legalDataRegistry[tabKey];
+            if (record) {
+                document.getElementById('legalTabTitle').innerText = record.title;
+                document.getElementById('legalTabBody').innerText = record.text;
+                legalCard.style.display = "block";
+                legalCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if (document.getElementById('sidebarPanel').style.right === "0px") {
+                    toggleSidebarMenu();
+                }
+            }
+        }
+
+        function closeLegalCard() {
+            document.getElementById('legalDisplayCard').style.display = "none";
+        }
+
+        function filterGameGridList() {
+            const input = document.getElementById('gameSearchInput').value.toLowerCase();
+            const cards = document.getElementsByClassName('game-card-node');
+            for (let i = 0; i < cards.length; i++) {
+                const name = cards[i].getElementsByClassName('game-app-name')[0].innerText.toLowerCase();
+                cards[i].style.display = name.includes(input) ? "flex" : "none";
+            }
+        }
+
+        window.onscroll = function() {
+            const scrollBtn = document.getElementById('scrollTopBtn');
+            scrollBtn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "flex" : "none";
+        };
+
+        function scrollToTopDashboard() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function executeLiveNotificationCycle() {
+            const toastNode = document.getElementById('win-notification-toast');
+            const activeData = livePlatformWinnersPool[Math.floor(Math.random() * livePlatformWinnersPool.length)];
+            
+            document.getElementById('toast-icon-target').src = activeData.icon;
+            document.getElementById('toast-user-target').innerText = activeData.name;
+            document.getElementById('toast-uid-target').innerText = activeData.uid;
+            document.getElementById('toast-amount-target').innerText = activeData.amount;
+            
+            toastNode.style.right = "14px";
+            clearTimeout(toastTimerTracker);
+            toastTimerTracker = setTimeout(() => { toastNode.style.right = "-320px"; }, 4000);
+        }
+
+        function dismissToastManually() {
+            const toastNode = document.getElementById('win-notification-toast');
+            clearTimeout(toastTimerTracker);
+            toastNode.style.right = "-320px";
+        }
+
+        setInterval(executeLiveNotificationCycle, 10000);
+    </script>
 </body>
 </html>
