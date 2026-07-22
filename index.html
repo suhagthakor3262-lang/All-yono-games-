@@ -7,6 +7,6 @@ title: Home - All Yono Games
   <div class="game-card-node">
       <img src="{{ post.icon }}" class="game-app-icon" width="64" height="64" alt="{{ post.title }}">
       <div class="game-app-name">{{ post.title }}</div>
-      <a href="{{ post.url }}" class="game-download-btn">Get APK</a>
+      <a href="{{ post.url | relative_url }}" class="game-download-btn">Get APK</a>
   </div>
 {% endfor %}
