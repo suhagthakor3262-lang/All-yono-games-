@@ -1,100 +1,1242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>All Yono Games</title>
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Arial,Helvetica,sans-serif;background:#071120;color:#fff}
-    a{text-decoration:none;color:inherit}
-    .hero{background:linear-gradient(180deg,#0a1b3a 0%,#071120 100%);padding:24px 16px 30px;border-bottom:1px solid rgba(255,255,255,.08)}
-    .brand{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto 24px}
-    .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:22px;color:#8cc8ff}
-    .logo-badge{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#2d7dff,#64c6ff);display:grid;place-items:center;color:#fff;font-weight:800;box-shadow:0 8px 24px rgba(45,125,255,.35)}
-    .nav-btn{padding:10px 16px;border-radius:999px;background:rgba(140,200,255,.12);border:1px solid rgba(140,200,255,.28);color:#cfe9ff;font-size:14px}
-    .hero-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:center}
-    .headline{font-size:clamp(32px,5vw,56px);line-height:1.05;margin-bottom:14px}
-    .headline span{color:#63b7ff}
-    .sub{font-size:16px;line-height:1.6;color:#b6cae5;max-width:560px;margin-bottom:22px}
-    .cta-row{display:flex;flex-wrap:wrap;gap:12px}
-    .cta{padding:14px 20px;border-radius:14px;font-weight:700}
-    .cta.primary{background:linear-gradient(135deg,#2f80ff,#67d4ff);color:#fff;box-shadow:0 12px 30px rgba(47,128,255,.35)}
-    .cta.secondary{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#e8f4ff}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px;max-width:560px}
-    .stat{padding:14px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
-    .stat b{display:block;font-size:20px;color:#8ed0ff;margin-bottom:4px}
-    .mock{padding:14px;border-radius:26px;background:linear-gradient(180deg,rgba(33,82,165,.25),rgba(8,17,32,.8));border:1px solid rgba(123,190,255,.2);box-shadow:0 22px 60px rgba(0,0,0,.3)}
-    .mock-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;color:#cfe9ff}
-    .pill{padding:8px 12px;border-radius:999px;background:rgba(99,183,255,.12);border:1px solid rgba(99,183,255,.2);font-size:12px}
-    .card-grid{max-width:1100px;margin:0 auto;padding:26px 16px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    .card{background:#0d1730;border:1px solid rgba(140,200,255,.12);border-radius:22px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.18)}
-    .thumb{height:110px;background:linear-gradient(135deg,#123a78,#2f80ff 55%,#77dbff);display:flex;align-items:end;padding:14px;font-size:20px;font-weight:800}
-    .card-body{padding:16px}
-    .card h3{font-size:18px;margin-bottom:8px;color:#fff}
-    .card p{font-size:13px;line-height:1.5;color:#b6cae5;margin-bottom:14px;min-height:40px}
-    .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-    .badge{font-size:11px;padding:6px 10px;border-radius:999px;background:rgba(99,183,255,.12);color:#8ed0ff;border:1px solid rgba(99,183,255,.2)}
-    .btn{display:block;text-align:center;padding:12px 14px;border-radius:14px;background:linear-gradient(135deg,#2f80ff,#67d4ff);font-weight:700;color:#fff}
-    .section-title{max-width:1100px;margin:0 auto;padding:0 16px 12px;font-size:24px;color:#fff}
-    .footer{padding:26px 16px 40px;border-top:1px solid rgba(255,255,255,.08);color:#90a8c9;text-align:center;font-size:13px}
-    @media (max-width: 980px){.hero-grid,.card-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr}.brand{flex-direction:column;align-items:flex-start;gap:12px}}
-    @media (max-width: 640px){.hero-grid,.card-grid{grid-template-columns:1fr}.headline{font-size:34px}.sub{font-size:15px}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROSAFEYONOGAME - All Yono Games Download</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-orange: #FF4D00;
+            --secondary-red: #D32F2F;
+            --bg-light: #F4F6F9;
+            --text-dark: #222222;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            padding-bottom: 70px;
+        }
+
+        /* --- Header --- */
+        header {
+            background-color: var(--primary-orange);
+            color: white;
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: white;
+            padding: 2px;
+            object-fit: contain;
+        }
+
+        .site-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .menu-btn {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --- Sidebar Navigation --- */
+        .sidebar-panel {
+            position: fixed;
+            top: 0;
+            right: -280px;
+            width: 260px;
+            height: 100vh;
+            background: #ffffff;
+            box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+            z-index: 2000;
+            transition: right 0.25s ease-in-out;
+            padding: 20px;
+        }
+
+        .sidebar-panel.open {
+            right: 0;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-orange);
+            padding-bottom: 10px;
+        }
+
+        .sidebar-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary-orange);
+            text-transform: uppercase;
+        }
+
+        .sidebar-close {
+            background: none;
+            border: none;
+            color: #111827;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .sidebar-link {
+            display: block;
+            color: #374151;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 10px 12px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            background: #f3f4f6;
+            border: 1px solid transparent;
+            cursor: pointer;
+            text-align: left;
+            width: 100%;
+        }
+
+        .sidebar-link:hover {
+            background: #fff0f0;
+            border-color: var(--secondary-red);
+            color: var(--secondary-red);
+        }
+
+        /* --- Navigation Bar --- */
+        nav {
+            background: #fff;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 5px 12px;
+            border-radius: 15px;
+        }
+
+        nav a.active {
+            color: var(--secondary-red);
+            border: 1px solid var(--secondary-red);
+            background-color: #FFF0F0;
+        }
+
+        /* --- Container --- */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        /* --- Search Field --- */
+        .search-box-wrapper {
+            margin-bottom: 15px;
+        }
+
+        .search-input-field {
+            width: 100%;
+            padding: 10px 14px;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 20px;
+            color: #111827;
+            font-size: 14px;
+            outline: none;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        /* --- Featured Horizontal Scroll Section --- */
+        .featured-section {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            scrollbar-width: none;
+        }
+
+        .featured-section::-webkit-scrollbar {
+            display: none;
+        }
+
+        .featured-card {
+            min-width: 135px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid #EAEAEA;
+            flex-shrink: 0;
+        }
+
+        .fire-badge {
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #FF8C00;
+            font-size: 1.1rem;
+        }
+
+        .app-icon-lg {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            margin: 10px auto 5px;
+            object-fit: cover;
+        }
+
+        .app-name {
+            font-weight: bold;
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+            color: #111;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .app-info-sm {
+            font-size: 0.7rem;
+            color: #666;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .btn-download-sm {
+            background: var(--secondary-red);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        /* --- Main Filter Toggle --- */
+        .toggle-tabs {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .toggle-btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .toggle-btn.active {
+            background-color: var(--primary-orange);
+            color: white;
+        }
+
+        .toggle-btn.inactive {
+            background-color: #E0E0E0;
+            color: #666;
+        }
+
+        /* --- Vertical App List --- */
+        .app-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .app-list-item {
+            background: white;
+            border-radius: 12px;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .rank-badge {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #222;
+            color: #FFD700;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-top-left-radius: 12px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .app-icon-md {
+            width: 55px;
+            height: 55px;
+            border-radius: 10px;
+            margin-top: 5px;
+            object-fit: cover;
+        }
+
+        .app-details {
+            flex: 1;
+        }
+
+        .app-title-md {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+            color: #111;
+        }
+
+        .app-detail-text {
+            font-size: 0.75rem;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .btn-download-md {
+            background: var(--secondary-red);
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-transform: uppercase;
+        }
+
+        /* --- Legal Card Display Box --- */
+        .legal-display-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 15px 0;
+            border: 2px solid var(--primary-orange);
+            display: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .legal-card-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--secondary-red);
+            margin-bottom: 10px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .legal-close-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 2px 8px;
+            font-size: 11px;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .legal-card-body {
+            font-size: 13px;
+            color: #374151;
+            line-height: 1.5;
+            text-align: justify;
+            white-space: pre-line;
+        }
+
+        /* --- FAQ Section --- */
+        .faq-section {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .faq-title {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: var(--primary-orange);
+            text-align: center;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #222;
+        }
+
+        .faq-answer {
+            font-size: 0.8rem;
+            color: #555;
+            margin-top: 8px;
+            display: none;
+            line-height: 1.4;
+        }
+
+        /* --- Quick Menu Grid --- */
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 25px 0;
+            background: var(--secondary-red);
+            padding: 15px;
+            border-radius: 12px;
+            color: white;
+            text-align: center;
+        }
+
+        .quick-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .quick-item i {
+            font-size: 1.2rem;
+            background: rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* --- Legal & Share Section --- */
+        .info-box {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .alert-box {
+            background: #FFEBEB;
+            border: 1px solid #FFCACA;
+            color: var(--secondary-red);
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            margin-bottom: 15px;
+        }
+
+        .share-btn {
+            background: #102A43;
+            color: white;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        /* --- Floating Actions --- */
+        .floating-telegram {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #0088cc;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            text-decoration: none;
+            z-index: 1000;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #777;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-  <section class="hero">
-    <div class="brand">
-      <div class="logo"><div class="logo-badge">Y</div> All Yono Games</div>
-      <a class="nav-btn" href="#games">View Games</a>
-    </div>
-    <div class="hero-grid">
-      <div>
-        <div class="pill" style="display:inline-block;margin-bottom:14px;">Blue Edition • Fast Join • Mobile Friendly</div>
-        <h1 class="headline">Play Top <span>Yono Games</span> with Direct Links</h1>
-        <p class="sub">A clean blue-style landing page for all your game listings, bonus offers, and direct join buttons. Built for fast browsing and high conversion on mobile.</p>
-        <div class="cta-row">
-          <a class="cta primary" href="#games">Join Now</a>
-          <a class="cta secondary" href="#games">Browse Apps</a>
-        </div>
-        <div class="stats">
-          <div class="stat"><b>13+</b> Games listed</div>
-          <div class="stat"><b>Blue</b> Premium theme</div>
-          <div class="stat"><b>Fast</b> Direct access</div>
-        </div>
-      </div>
-      <div class="mock">
-        <div class="mock-top"><span>Featured Apps</span><span class="pill">Today Bonus</span></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-          <div class="card" style="border-radius:18px">
-            <div class="thumb">Boss</div>
-            <div class="card-body"><h3>Boss Rummy</h3><a class="btn" href="#">Open Link</a></div>
-          </div>
-          <div class="card" style="border-radius:18px">
-            <div class="thumb">Club</div>
-            <div class="card-body"><h3>Club INR</h3><a class="btn" href="#">Open Link</a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <h2 class="section-title" id="games">All Yono Games</h2>
-    <section class="card-grid">
-    <article class="card"><div class="thumb">01</div><div class="card-body"><h3>Boss Rummy</h3><p>Top listed game with bonus style card and direct entry button.</p><div class="badge-row"><span class="badge">Bonus</span><span class="badge">Direct</span></div><a class="btn" href="https://www.bossrummyz.com/?code=9HF4YSK63MX&t=1785298304" target="_blank">Join Now</a></div></article>
-    <article class="card"><div class="thumb">02</div><div class="card-body"><h3>Club INR</h3><p>Clean app card layout with blue highlight and join button.</p><div class="badge-row"><span class="badge">New</span><span class="badge">Fast</span></div><a class="btn" href="https://clubinrvip.vip/?code=9VCFS6TH9QU&t=1785298497" target="_blank">Join Now</a></div></article>
-    <article class="card"><div class="thumb">03</div><div class="card-body"><h3>Game Rummy</h3><p>Modern listing block with a strong CTA and trust feel.</p><div class="badge-row"><span class="badge">Hot</span><span class="badge">Win</span></div><a class="btn" href="https://gamerummy.org/?code=JXA44SSTNVW&t=1785298676" target="_blank">Join Now</a></div></article>
-    <article class="card"><div class="thumb">04</div><div class="card-body"><h3>Rumble Rummy</h3><p>Consistent card style for quick navigation and better UX.</p><div class="badge-row"><span class="badge">Bonus</span><span class="badge">Safe</span></div><a class="btn" href="https://www.rumblerummy999.vip/?code=UC02RS4D5NF&t=1785298777" target="_blank">Join Now</a></div></article>
-    <article class="card"><div class="thumb">05</div><div class="card-body"><h3>OK Rummy</h3><p>Blue-themed section with rounded cards and bold buttons.</p><div class="badge-row"><span class="badge">Join</span><span class="badge">Top</span></div><a class="btn" href="https://www.okrummy7.com/?code=27BUATLPZ2C&t=1785298906" target="_blank">Join Now</a></div></article>
-    <article class="card"><div class="thumb">06</div><div class="card-body"><h3>Hi Rummy</h3><p>Simple mobile-friendly card with direct app access.</p><div class="badge-row"><span class="badge">New</span><span class="badge">Blue</span></div><a class="btn" href="https://joinhirummy.top/?code=RX3RPAXW9YA&t=1785299082" target="_blank">Join Now</a></div></article>
-    <article class="card"><div class="thumb">07</div><div class="card-body"><h3>Jaiho Rummy</h3><p>Clean call-to-action layout designed to convert fast.</p><div class="badge-row"><span class="badge">Hot</span><span class="badge">Direct</span></div><a class="btn" href="https://jaihorummy.co/?code=E743FQGJMGT&t=1785299189" target="_blank">Join Now</a></div></article>
-        <article class="card"><div class="thumb">08</div><div class="card-body"><h3>789 Jackpots</h3><p>Premium style app card with a bright blue entry button.</p><div class="badge-row"><span class="badge">Jackpot</span><span class="badge">Top</span></div><a class="btn" href="https://join789jackpots2.cc/?code=J7ZVY7GG8MG&t=1785299289" target="_blank">Join Now</a></div></article>
-    <article class="card"><div class="thumb">09</div><div class="card-body"><h3>Spin 101</h3><p>Modern block for listing spin-style games in one page.</p><div class="badge-row"><span class="badge">Spin</span><span class="badge">Win</span></div><a class="btn" href="https://spin101-l.org/?code=P4CKGELNRH7&t=1785299411" target="_blank">Join Now</a></div></article>
-    <article class="card"><div class="thumb">10</div><div class="card-body"><h3>IND Slots</h3><p>Strong blue accent card with direct-link action.</p><div class="badge-row"><span class="badge">Slots</span><span class="badge">Fast</span></div><a class="btn" href="https://www.indslotsreferral.com/?code=EYMRMSC1VK7&t=1785299666" target="_blank">Join Now</a></div></article>
-    <article class="card"><div class="thumb">11</div><div class="card-body"><h3>Max Rummy</h3><p>Big clean button style for a better landing page flow.</p><div class="badge-row"><span class="badge">Bonus</span><span class="badge">Join</span></div><a class="btn" href="https://www.maxrummy33.com/?code=QUMNL91C9EG&t=1785299834" target="_blank">Join Now</a></div></article>
-    <article class="card"><div class="thumb">12</div><div class="card-body"><h3>101 Z</h3><p>Compact and polished card for all game categories.</p><div class="badge-row"><span class="badge">Top</span><span class="badge">New</span></div><a class="btn" href="https://101z2.com/?code=398ZMFCUX85&t=1785299934" target="_blank">Join Now</a></div></article>
-    <article class="card"><div class="thumb">13</div><div class="card-body"><h3>Bingo 101</h3><p>Final listing card with a crisp blue design and CTA.</p><div class="badge-row"><span class="badge">Bingo</span><span class="badge">Direct</span></div><a class="btn" href="https://bin7go101.com/?code=AZTWFC1LN3P&t=1785300073" target="_blank">Join Now</a></div></article>
-    </section>
-      <div class="footer">All Yono Games • Blue theme landing page • Ready for editing</div>
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <img src="https://i.ibb.co/fdZpJswb/file-000000002aa872089a44603a2278ac14.png" alt="ProSafe Logo" class="logo-img">
+            <span class="site-title">PROSAFEYONOGAME</span>
+        </div>
+        <i class="fa-solid fa-bars menu-btn" onclick="toggleSidebarMenu()"></i>
+    </header>
+
+    <!-- Sidebar Panel -->
+    <div class="sidebar-panel" id="sidebarPanel">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Menu Options</span>
+            <button class="sidebar-close" onclick="toggleSidebarMenu()">&times;</button>
+        </div>
+        <button class="sidebar-link" onclick="handleLegalDisplay('home')">🏡 Home Dashboard</button>
+        <a href="https://t.me/invitnew" target="_blank" class="sidebar-link">📢 Telegram Channel</a>
+        <button class="sidebar-link" onclick="handleLegalDisplay('privacy')">🛡️ Privacy Policy</button>
+        <button class="sidebar-link" onclick="handleLegalDisplay('terms')">📄 Terms & Conditions</button>
+        <button class="sidebar-link" onclick="handleLegalDisplay('disclaimer')">🌐 Disclaimer Portal</button>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#" class="active" onclick="handleLegalDisplay('home')">Home</a>
+        <a href="#" onclick="handleLegalDisplay('privacy')">About</a>
+        <a href="promo-code.html">Promo Codes</a>
+        <a href="#" onclick="handleLegalDisplay('disclaimer')">Disclaimer</a>
+    </nav>
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Search Bar -->
+        <div class="search-box-wrapper">
+            <input type="text" class="search-input-field" id="gameSearchInput" placeholder="🔍 Search games..." onkeyup="filterGameList()">
+        </div>
+
+        <!-- Dynamic Legal Display Card -->
+        <div class="legal-display-card" id="legalDisplayCard">
+            <div class="legal-card-title">
+                <span id="legalTabTitle">Document Title</span>
+                <button class="legal-close-btn" onclick="closeLegalCard()">Close ✕</button>
+            </div>
+            <div class="legal-card-body" id="legalTabBody">Loading...</div>
+        </div>
+
+        <!-- Top Featured Scrollable Apps -->
+        <div class="featured-section">
+            <div class="featured-card">
+                <i class="fa-solid fa-fire fire-badge"></i>
+                <img src="https://i.ibb.co/vx3JSHvL/IMG-20260709-090606-552.jpg" alt="Max Rummy" class="app-icon-lg">
+                <div class="app-name">Max Rummy</div>
+                <div class="app-info-sm">Bonus Active<br>Min Withdraw ₹100</div>
+                <a href="max-rummy.html" class="btn-download-sm">DOWNLOAD</a>
+            </div>
+            <div class="featured-card">
+                <i class="fa-solid fa-fire fire-badge"></i>
+                <img src="https://i.ibb.co/MknBcYh4/IMG-20260723-075159-651.jpg" alt="Dhan Game" class="app-icon-lg">
+                <div class="app-name">Dhan Game</div>
+                <div class="app-info-sm">Bonus Active<br>Min Withdraw ₹100</div>
+                <a href="dhan-game.html" class="btn-download-sm">DOWNLOAD</a>
+            </div>
+            <div class="featured-card">
+                <i class="fa-solid fa-fire fire-badge"></i>
+                <img src="https://i.ibb.co/MFCpD0v/IMG-20260729-083044-255.jpg" alt="Win Rummy" class="app-icon-lg">
+                <div class="app-name">Win Rummy</div>
+                <div class="app-info-sm">New Launched<br>Min Withdraw ₹100</div>
+                <a href="win-rummy.html" class="btn-download-sm">DOWNLOAD</a>
+            </div>
+        </div>
+
+        <!-- Filter Toggle Buttons -->
+        <div class="toggle-tabs">
+            <button class="toggle-btn active" id="btnAllApps" onclick="switchTab('all')"><i class="fa-solid fa-layer-group"></i> ALL APPS</button>
+            <button class="toggle-btn inactive" id="btnNewApps" onclick="switchTab('new')"><i class="fa-solid fa-sparkles"></i> NEW APPS</button>
+        </div>
+
+        <!-- Vertical App List Start -->
+        <div class="app-list" id="appList">
+                      <!-- 11. Bingo 101 -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="bingo 101">
+                <div class="rank-badge">11</div>
+                <img src="https://i.ibb.co/S46hgCs6/Screenshot-2026-0524-214009.png" alt="Bingo 101" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Bingo 101</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹77 to ₹177</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="bingo-101.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 12. 101Z -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="101z">
+                <div class="rank-badge">12</div>
+                <img src="https://i.ibb.co/QF1qr0Xs/IMG-20260526-095252-042.jpg" alt="101Z" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">101Z</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹50 to ₹100</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="101-z.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 13. IND Slots -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="ind slots">
+                <div class="rank-badge">13</div>
+                <img src="https://i.ibb.co/qYX8344d/IMG-20260526-095508-315.jpg" alt="IND Slots" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">IND Slots</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹33 to ₹57</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="ind-slots.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 14. Spin 101 -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="spin 101">
+                <div class="rank-badge">14</div>
+                <img src="https://i.ibb.co/Tq72gZFq/IMG-20260527-084621-601.jpg" alt="Spin 101" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Spin 101</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹40 to ₹80</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="spin-101.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 15. Ind Club -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="ind club">
+                <div class="rank-badge">15</div>
+                <img src="https://i.ibb.co/Df1Ckfb6/IMG-20260527-084343-458.jpg" alt="Ind Club" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Ind Club</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹50 to ₹100</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="ind-club.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 16. 789 Jackpot -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="789 jackpot">
+                <div class="rank-badge">16</div>
+                <img src="https://i.ibb.co/LXHb3q9r/IMG-20260527-084105-646.jpg" alt="789 Jackpot" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">789 Jackpot</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹40 to ₹80</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="789-jackpots.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 17. Jaiho Rummy -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="jaiho rummy">
+                <div class="rank-badge">17</div>
+                <img src="https://i.ibb.co/S4Lbb73b/IMG-20260527-083816-794.jpg" alt="Jaiho Rummy" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Jaiho Rummy</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹40 to ₹120</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="jaiho-rummy.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 18. Hi Rummy -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="hi rummy">
+                <div class="rank-badge">18</div>
+                <img src="https://i.ibb.co/Y4QjvfRz/IMG-20260527-083518-645.jpg" alt="Hi Rummy" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Hi Rummy</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹44 to ₹93</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="hi-rummy.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 19. Gogo Rummy -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="gogo rummy">
+                <div class="rank-badge">19</div>
+                <img src="https://i.ibb.co/5xFTSv8P/IMG-20260527-083320-198.jpg" alt="Gogo Rummy" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Gogo Rummy</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹50 to ₹100</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="gogo-rummy.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 20. Boss Rummy -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="boss rummy">
+                <div class="rank-badge">20</div>
+                <img src="https://i.ibb.co/RpFWTsC2/IMG-20260527-083035-119.jpg" alt="Boss Rummy" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Boss Rummy</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹79</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="boss-rummy.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 21. Club INR -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="club inr">
+                <div class="rank-badge">21</div>
+                <img src="https://i.ibb.co/mCGfLWTQ/IMG-20260527-082911-954.jpg" alt="Club INR" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Club INR</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹44 to ₹115</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="club-inr.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 22. Game Rummy -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="game rummy">
+                <div class="rank-badge">22</div>
+                <img src="https://i.ibb.co/XfpncM77/IMG-20260527-082804-195.jpg" alt="Game Rummy" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Game Rummy</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹53 to ₹88</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="game-rummy.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 23. Rumble Rummy -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="rumble rummy">
+                <div class="rank-badge">23</div>
+                <img src="https://i.ibb.co/6CWcJ9t/IMG-20260527-082552-806.jpg" alt="Rumble Rummy" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Rumble Rummy</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹40 to ₹78</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="rumble-rummy.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 24. OK Rummy -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="ok rummy">
+                <div class="rank-badge">24</div>
+                <img src="https://i.ibb.co/VYBQzpwY/IMG-20260604-190041-410.jpg" alt="OK Rummy" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">OK Rummy</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹50 to ₹100</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="ok-rummy.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 25. Spin Gold -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="spin gold">
+                <div class="rank-badge">25</div>
+                <img src="https://i.ibb.co/932KxXnP/Screenshot-2026-0604-203451.png" alt="Spin Gold" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Spin Gold</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹50 to ₹100</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="spin-gold.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 26. Bet 213 -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="bet 213">
+                <div class="rank-badge">26</div>
+                <img src="https://i.ibb.co/YsMHdC3/IMG-20260604-203944-171.jpg" alt="Bet 213" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Bet 213</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹40 to ₹80</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="bet-213.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 27. Slots Winner -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="slots winner">
+                <div class="rank-badge">27</div>
+                <img src="https://i.ibb.co/JRfZxJFz/IMG-20260601-134057-693.jpg" alt="Slots Winner" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Slots Winner</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹50 to ₹100</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="slots-winner.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 28. Neta VIP -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="neta vip">
+                <div class="rank-badge">28</div>
+                <img src="https://i.ibb.co/q3mdn5fK/IMG-20260601-134207-570.jpg" alt="Neta VIP" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Neta VIP</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹50 to ₹100</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="neta-vip.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 29. MBM Bet -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="mbm bet">
+                <div class="rank-badge">29</div>
+                <img src="https://i.ibb.co/TxzVSnrm/IMG-20260601-134235-452.jpg" alt="MBM Bet" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">MBM Bet</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹50 to ₹100</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="mbm-bet.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 30. Jaiho Win -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="jaiho win">
+                <div class="rank-badge">30</div>
+                <img src="https://i.ibb.co/zVGcGjrv/IMG-20260601-134303-975.jpg" alt="Jaiho Win" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Jaiho Win</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹50 to ₹100</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="jaiho-win.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+                        <!-- 31. ABC Rummy -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="abc rummy">
+                <div class="rank-badge">31</div>
+                <img src="https://i.ibb.co/PGKmgd81/IMG-20260601-134329-100.jpg" alt="ABC Rummy" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">ABC Rummy</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹50 to ₹100</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="abc-rummy.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 32. Yono VIP -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="yono vip">
+                <div class="rank-badge">32</div>
+                <img src="https://i.ibb.co/gLCMDkSM/IMG-20260601-134349-455.jpg" alt="Yono VIP" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Yono VIP</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹50 to ₹100</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="yono-vip.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 33. Rummy 77 -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="rummy 77">
+                <div class="rank-badge">33</div>
+                <img src="https://i.ibb.co/G4xVYT3V/IMG-20260529-085328-640.jpg" alt="Rummy 77" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Rummy 77</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹53 to ₹101</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="rummy-77.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 34. YONO 777 -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="yono 777">
+                <div class="rank-badge">34</div>
+                <img src="https://i.ibb.co/n4845mq/IMG-20260528-170231-394.jpg" alt="Yono 777" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Yono 777</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹50 to ₹100</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="yono-777.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 35. Slots Spin -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="slots spin">
+                <div class="rank-badge">35</div>
+                <img src="https://i.ibb.co/Sw5jz8d4/IMG-20260529-085855-118.jpg" alt="Slots Spin" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Slots Spin</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹50 to ₹100</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="slots-spin.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 36. Jaiho Arcade -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="jaiho arcade">
+                <div class="rank-badge">36</div>
+                <img src="https://i.ibb.co/zT56hbGh/IMG-20260528-170118-181.jpg" alt="Jaiho Arcade" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Jaiho Arcade</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹50 to ₹100</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="jaiho-arcade.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 37. Jaiho Spin -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="jaiho spin">
+                <div class="rank-badge">37</div>
+                <img src="https://i.ibb.co/mFtZ60Ft/IMG-20260528-170044-119.jpg" alt="Jaiho Spin" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Jaiho Spin</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹50 to ₹100</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="jaiho-spin.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 38. Rummy Ludo -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="rummy ludo">
+                <div class="rank-badge">38</div>
+                <img src="https://i.ibb.co/gMxqcQCG/IMG-20260528-165950-648.jpg" alt="Rummy Ludo" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Rummy Ludo</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹50 to ₹100</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="rummy-ludo.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 39. Maha Game -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="maha game">
+                <div class="rank-badge">39</div>
+                <img src="https://i.ibb.co/kVhqgcBS/IMG-20260528-165912-402.jpg" alt="Maha Game" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Maha Game</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹63 to ₹80</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="maha-game.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 40. Yes Spin -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="yes spin">
+                <div class="rank-badge">40</div>
+                <img src="https://i.ibb.co/HpGCKDhf/IMG-20260528-165827-292.jpg" alt="Yes Spin" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Yes Spin</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹66 to ₹91</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="yes-spin.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 41. Yono Slots -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="yono slots">
+                <div class="rank-badge">41</div>
+                <img src="https://i.ibb.co/W4RkkgnW/IMG-20260528-165717-352.jpg" alt="Yono Slots" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Yono Slots</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹44 to ₹90</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="yono-slots-game.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 42. Rummy 888 -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="rummy 888">
+                <div class="rank-badge">42</div>
+                <img src="https://i.ibb.co/wF6g121J/IMG-20260528-165432-914.jpg" alt="Rummy 888" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Rummy 888</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹50 to ₹100</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="rummy-888.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 43. Jaiho Slots -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="jaiho slots">
+                <div class="rank-badge">43</div>
+                <img src="https://i.ibb.co/wZBnk9sF/IMG-20260528-165407-231.jpg" alt="Jaiho Slots" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Jaiho Slots</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹50 to ₹100</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="jaiho-slots.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 44. Yono Games -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="yono games">
+                <div class="rank-badge">44</div>
+                <img src="https://i.ibb.co/GQ6GP2LS/Screenshot-2026-0528-165315.png" alt="Yono Games" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Yono Games</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹109</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="yono-games.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 45. Top Rummy -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="top rummy">
+                <div class="rank-badge">45</div>
+                <img src="https://i.ibb.co/RGtvj6Dd/IMG-20260528-165052-353.jpg" alt="Top Rummy" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Top Rummy</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹50 to ₹100</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="top-rummy.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+                        <!-- 46. Spin Winner -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="spin winner">
+                <div class="rank-badge">46</div>
+                <img src="https://i.ibb.co/chcCTzLS/IMG-20260528-165212-428.jpg" alt="Spin Winner" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Spin Winner</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹50 to ₹100</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="spin-winner.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 47. Joy Rummy -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="joy rummy">
+                <div class="rank-badge">47</div>
+                <img src="https://i.ibb.co/xKNsWwb0/IMG-20260528-165017-074.jpg" alt="Joy Rummy" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Joy Rummy</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹200</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="joy-rummy.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+            <!-- 48. Love Rummy -->
+            <div class="app-list-item app-card-node" data-category="all" data-name="love rummy">
+                <div class="rank-badge">48</div>
+                <img src="https://i.ibb.co/fVc44frd/IMG-20260528-164912-649.jpg" alt="Love Rummy" class="app-icon-md">
+                <div class="app-details">
+                    <div class="app-title-md">Love Rummy</div>
+                    <div class="app-detail-text" style="color:var(--secondary-red);">✨ Bonus ₹43 to ₹88</div>
+                    <div class="app-detail-text">💸 Min Withdraw ₹100</div>
+                </div>
+                <a href="love-rummy.html" class="btn-download-md"><i class="fa-solid fa-download"></i> DOWNLOAD</a>
+            </div>
+
+        </div> <!-- Vertical App List End -->
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <div class="faq-title">Frequently Asked Questions (FAQs)</div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">🎮 What is Yono Games? <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="faq-answer">Yono Games (prosafeyonogame2026) is an online platform that provides users access to a wide range of real money gaming apps. From rummy and slots to bingo and arcade games, players can enjoy multiple gaming options in one place.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">🚀 How do I download any game app? <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="faq-answer">Simple! Open our official website Prosafeyonogame2026.com, search your desired Yono Game and click on the download app button. Now, your game will be auto downloaded into your device.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">💰 What is the minimum withdrawal on Yono apps? <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="faq-answer">On most listed Yono apps the minimum withdrawal is ₹100.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">👑 Are you the official owner of all these yono apps? <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="faq-answer">No. Yono Games is an independent listing platform. We do not own, operate or control any app featured here. We only collect publicly available details to help you compare apps and download quickly.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">🛡️ Are real-money gaming apps legal and safe to use? <i class="fa-solid fa-chevron-down"></i></div>
+                <div class="faq-answer">The listed apps use encryption and verified payment gateways, but they are real-money platforms for users aged 18+ only. Real-money gaming is restricted or banned in some Indian states, so always check your local laws.</div>
+            </div>
+        </div>
+
+        <!-- Player Guide Section -->
+        <div class="info-box" style="text-align: left; margin-bottom: 20px;">
+            <h3 style="color: var(--primary-orange); margin-bottom: 8px; font-size: 1rem;"><i class="fa-solid fa-book-open"></i> Player Guide & Tips</h3>
+            <p style="margin-bottom: 6px;"><strong>1. Begin with Simpler Games:</strong> If you're new, start with easy titles like Yono Rummy and card classics with clear rules.</p>
+            <p style="margin-bottom: 6px;"><strong>2. Use Official Links:</strong> Always download APKs from verified links to avoid fake applications.</p>
+            <p style="margin-bottom: 6px;"><strong>3. Set Limits:</strong> Real money gaming involves risk. Set daily playing limits and never bet more than you can afford to lose.</p>
+        </div>
+
+        <!-- Bottom Navigation Grid Menu -->
+        <div class="quick-grid">
+            <div onclick="handleLegalDisplay('privacy')" class="quick-item"><i class="fa-solid fa-circle-info"></i> About</div>
+            <a href="https://t.me/invitnew" target="_blank" class="quick-item"><i class="fa-paper-plane fa-solid"></i> Telegram</a>
+            <div onclick="handleLegalDisplay('disclaimer')" class="quick-item"><i class="fa-solid fa-triangle-exclamation"></i> Disclaimer</div>
+            <div onclick="handleLegalDisplay('privacy')" class="quick-item"><i class="fa-solid fa-envelope"></i> Contact</div>
+            <a href="promo-code.html" class="quick-item"><i class="fa-solid fa-tag"></i> Promo</a>
+            <div onclick="switchTab('all')" class="quick-item"><i class="fa-solid fa-table-cells"></i> More apps</div>
+  </div>
+          <!-- Legal Disclaimer & Warnings Box -->
+        <div class="info-box">
+            <strong>PROSAFEYONOGAME2026.com</strong> is an independent platform. We don't own, manage, or operate any listed apps. Rummy apps carry financial risks and can be addictive. Please play responsibly.
+        </div>
+
+        <div class="alert-box">
+            <strong>Alert:</strong> Rummy is banned in Andhra Pradesh, Sikkim, Nagaland, Assam, Arunachal Pradesh, Tamil Nadu, Odisha, and Telangana.
+        </div>
+
+        <!-- Share Button -->
+        <button class="share-btn" onclick="copyLink()">
+            <i class="fa-solid fa-copy"></i> COPY & SHARE LINK
+        </button>
+
+        <footer>
+            <p>Copyright © 2026 PROSAFEYONOGAME. All rights reserved.</p>
+        </footer>
+
+    </div> <!-- Container End -->
+
+    <!-- Floating Telegram Button -->
+    <a href="https://t.me/invitnew" target="_blank" class="floating-telegram">
+        <i class="fa-paper-plane fa-solid"></i>
+    </a>
+
+    <!-- JavaScript Layer -->
+    <script>
+        const legalDataRegistry = {
+            privacy: {
+                title: "🛡️ Privacy Policy Document",
+                text: `Welcome to prosafeyonogame 2026. Your privacy is important to us. This Privacy Policy explains how we handle your information when you visit our website.\n\nInformation We Do Not Collect:\nAt prosafeyonogame 2026, we do not collect any personal information from users. We do not require you to provide any personal data in order to access or use our website.\n\nCookies:\nOur website may use cookies to enhance user experience.\n\nThird-Party Services:\nOur website may contain links to third-party sites.`
+            },
+            terms: {
+                title: "📄 Terms & Conditions Agreement",
+                text: `Welcome to prosafeyonogame 2026. By accessing or using our website, you agree to comply with and be bound by the following terms and conditions.\n\nUse of the Website:\nYou agree to use the website for lawful purposes only.\n\nIntellectual Property:\nAll content on this website is the property of ProSafe Yono Game or its licensors.`
+            },
+            disclaimer: {
+                title: "🌐 Legal Liability Disclaimer",
+                text: `The information provided by prosafeyonogame 2026 is for general informational purposes only.\n\nFinancial Risk:\nEngaging in gaming and betting may involve financial risks. We strongly advise you to exercise caution and only use funds that you can afford to lose.`
+            }
+        };
+
+        function toggleSidebarMenu() {
+            const sidebar = document.getElementById('sidebarPanel');
+            sidebar.classList.toggle('open');
+        }
+
+        function handleLegalDisplay(tabKey) {
+            const legalCard = document.getElementById('legalDisplayCard');
+            if (tabKey === 'home') {
+                legalCard.style.display = "none";
+                if(document.getElementById('sidebarPanel').classList.contains('open')) toggleSidebarMenu();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+            }
+            const record = legalDataRegistry[tabKey];
+            if (record) {
+                document.getElementById('legalTabTitle').innerText = record.title;
+                document.getElementById('legalTabBody').innerText = record.text;
+                legalCard.style.display = "block";
+                legalCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if(document.getElementById('sidebarPanel').classList.contains('open')) toggleSidebarMenu();
+            }
+        }
+
+        function closeLegalCard() {
+            document.getElementById('legalDisplayCard').style.display = "none";
+        }
+
+        function filterGameList() {
+            const input = document.getElementById('gameSearchInput').value.toLowerCase();
+            const cards = document.getElementsByClassName('app-card-node');
+            for (let i = 0; i < cards.length; i++) {
+                const name = cards[i].getAttribute('data-name').toLowerCase();
+                cards[i].style.display = name.includes(input) ? "flex" : "none";
+            }
+        }
+
+        function switchTab(type) {
+            const btnAll = document.getElementById('btnAllApps');
+            const btnNew = document.getElementById('btnNewApps');
+            const cards = document.getElementsByClassName('app-card-node');
+
+            if(type === 'all') {
+                btnAll.className = 'toggle-btn active';
+                btnNew.className = 'toggle-btn inactive';
+                for(let card of cards) card.style.display = 'flex';
+            } else {
+                btnNew.className = 'toggle-btn active';
+                btnAll.className = 'toggle-btn inactive';
+                for(let card of cards) {
+                    if(card.getAttribute('data-category') === 'new') {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            }
+        }
+
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href);
+            alert("Link copied to clipboard!");
+        }
+    </script>
 </body>
 </html>
