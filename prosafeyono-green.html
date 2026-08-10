@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Yono Games - ProSafe Green</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background: #f0faf4; color: #111827; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
+
+    /* Header - Green */
+    header {
+      background: #ffffff;
+      border-bottom: 2px solid #0d9f4f;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(13,159,79,0.1);
+    }
+    .nav-container {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 14px;
+    }
+    .nav-left-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .logo-circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0d9f4f, #057a3a);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 14px;
+    }
+    .site-brand-name {
+      font-size: 15px;
+      font-weight: 800;
+      color: #057a3a;
+      letter-spacing: -0.2px;
+    }
+    .menu-toggle-btn {
+      background: none;
+      border: none;
+      color: #0d9f4f;
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    /* Sidebar */
+    .sidebar-panel {
+      position: fixed;
+      top: 0;
+      right: -280px;
+      width: 260px;
+      height: 100vh;
+      background: #ffffff;
+      box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+      z-index: 200;
+      transition: right 0.25s linear;
+      padding: 20px;
+      border-left: 2px solid #0d9f4f;
+    }
+    .sidebar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 10px;
+    }
+    .sidebar-title { font-size: 15px; font-weight: 700; color: #057a3a; text-transform: uppercase; }
+    .sidebar-close { background: none; border: none; color: #111; font-size: 24px; cursor: pointer; }
+    .sidebar-link {
+      display: block;
+      color: #374151;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      background: #f0faf4;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-align: left;
+      width: 100%;
+    }
+    .sidebar-link:hover { background: #e8f5ee; border-color: #a7f3d0; color: #0d9f4f; }
+
+    main { flex: 1; width: 100%; max-width: 600px; margin: 0 auto; padding: 12px; }
+
+    /* Welcome */
+    .welcome-heading {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin: 6px 0 12px 0;
+      color: #0d9f4f;
+    }
+
+    /* Search */
+    .search-box-wrapper { margin-bottom: 12px; }
+    .search-input-field {
+      width: 100%;
+      padding: 12px 14px;
+      background: #ffffff;
+      border: 1.5px solid #a7f3d0;
+      border-radius: 10px;
+      color: #111827;
+      font-size: 14px;
+      outline: none;
+    }
+    .search-input-field:focus { border-color: #0d9f4f; }
+
+    /* Promo strip */
+    .hero-promo-strip {
+      background: linear-gradient(135deg, #057a3a 0%, #0d9f4f 50%, #12b85c 100%);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin: 10px 0 14px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(13,159,79,0.25);
+    }
+    .promo-left-flex { display: flex; align-items: center; gap: 10px; }
+    .promo-gift-badge {
+      background: #ffffff;
+      color: #0d9f4f;
+      font-size: 16px;
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .promo-text-wrap { display: flex; flex-direction: column; }
+    .promo-main-title { font-size: 13px; font-weight: 800; color: #ffffff; }
+    .promo-sub-title { font-size: 10px; color: #d1fae5; font-weight: 600; }
+    .promo-get-btn {
+      background: #ffffff;
+      color: #0d9f4f;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 8px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* Featured VIP strips */
+    .vip-promo-strip {
+      background: linear-gradient(135deg, #ffffff 0%, #f0faf4 100%);
+      border: 1.5px solid #0d9f4f;
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(13,159,79,0.08);
+    }
+    .vip-left { display: flex; align-items: center; gap: 10px; }
+    .vip-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #0d9f4f, #057a3a);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 11px;
+      text-align: center;
+      line-height: 1.1;
+      flex-shrink: 0;
+    }
+    .vip-meta { display: flex; flex-direction: column; }
+    .vip-badges { display: flex; align-items: center; gap: 4px; margin-bottom: 2px; }
+    .new-badge {
+      background: #dc2626;
+      color: white;
+      font-size: 9px;
+      font-weight: 900;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .bind-badge {
+      font-size: 10px;
+      color: #dc2626;
+      font-weight: 800;
+    }
+    .vip-title { font-weight: 800; color: #057a3a; font-size: 15px; }
+    .get-apk-btn {
+      background: #0d9f4f;
+      color: white;
+      text-decoration: none;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      font-size: 11px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    /* Game grid */
+    .section-label {
+      font-size: 14px;
+      font-weight: 800;
+      color: #057a3a;
+      margin: 16px 0 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .game-display-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .game-card-node {
+      background: #ffffff;
+      border: 1px solid #d1fae5;
+      border-radius: 14px;
+      padding: 12px 6px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+    .game-app-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #0d9f4f, #057a3a);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 11px;
+      text-align: center;
+      line-height: 1.15;
+    }
+    .game-app-name {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #1f2937;
+      margin-top: 8px;
+      height: 30px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-height: 1.25;
+    }
+    .game-download-btn {
+      display: inline-block;
+      width: 90%;
+      background: #0d9f4f;
+      color: #ffffff;
+      font-size: 10.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 7px 0;
+      border-radius: 6px;
+      margin-top: 8px;
+    }
+
+    /* Legal card */
+    .legal-display-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 16px;
+      margin: 12px 0;
+      border: 2px solid #0d9f4f;
+      display: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .legal-card-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #057a3a;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .legal-close-btn {
+      background: #ef4444;
+      color: white;
+      border: none;
+      padding: 3px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .legal-card-body {
+      font-size: 13px;
+      color: #374151;
+      line-height: 1.55;
+      text-align: justify;
+      white-space: pre-line;
+    }
+
+    /* Guide + Disclaimer */
+    .custom-guide-section {
+      background: #ffffff;
+      border: 1.5px solid #0d9f4f;
+      border-radius: 16px;
+      padding: 18px 14px;
+      margin: 18px 0 14px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      text-align: center;
+    }
+    .guide-badge {
+      display: inline-block;
+      background: #e8f5ee;
+      color: #0d9f4f;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      border: 1px solid #a7f3d0;
+      margin-bottom: 8px;
+    }
+    .guide-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #057a3a;
+      margin-bottom: 6px;
+    }
+    .guide-subtitle {
+      font-size: 13px;
+      color: #4b5563;
+      margin-bottom: 14px;
+    }
+    .guide-card-box {
+      background: #f0faf4;
+      border: 1px solid #d1fae5;
+      border-radius: 12px;
+      padding: 14px;
+      text-align: left;
+    }
+    .guide-tabs-container {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      scrollbar-width: none;
+    }
+    .guide-tabs-container::-webkit-scrollbar { display: none; }
+    .guide-tab-btn {
+      background: #ffffff;
+      color: #334155;
+      border: 1px solid #d1fae5;
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .guide-tab-btn.active {
+      background: #0d9f4f;
+      color: #ffffff;
+      border-color: #0d9f4f;
+    }
+    .guide-tab-content {
+      display: none;
+      font-size: 13px;
+      color: #334155;
+      line-height: 1.55;
+    }
+    .guide-tab-content.active { display: block; }
+
+    .custom-disclaimer-box {
+      background: #ffffff;
+      border: 1.5px solid #0d9f4f;
+      border-radius: 14px;
+      padding: 16px;
+      margin: 14px 0 18px 0;
+    }
+    .disclaimer-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 800;
+      color: #057a3a;
+      margin-bottom: 8px;
+    }
+    .disclaimer-icon-frame {
+      background: #0d9f4f;
+      color: #ffffff;
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+    .disclaimer-text {
+      font-size: 12.5px;
+      color: #475569;
+      line-height: 1.55;
+      text-align: left;
+    }
+
+    /* Footer */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid #d1fae5;
+      padding: 16px 14px;
+      text-align: center;
+      width: 100%;
+    }
+    .footer-legal-nav {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .footer-legal-btn {
+      background: none;
+      border: none;
+      color: #0d9f4f;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .footer-text {
+      font-size: 11.5px;
+      color: #4b5563;
+      font-weight: 500;
+    }
+
+    /* Floating buttons */
+    .back-to-top-btn {
+      position: fixed;
+      bottom: 80px;
+      right: 16px;
+      width: 42px;
+      height: 42px;
+      background: #ffffff;
+      border: 1.5px solid #0d9f4f;
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      cursor: pointer;
+      z-index: 150;
+      color: #0d9f4f;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .telegram-float-anchor {
+      position: fixed;
+      bottom: 20px;
+      right: 16px;
+      width: 48px;
+      height: 48px;
+      background: #0d9f4f;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(13,159,79,0.35);
+      z-index: 150;
+      text-decoration: none;
+      color: white;
+      font-size: 22px;
+    }
+
+    /* Toast */
+    #win-notification-toast {
+      position: fixed;
+      top: 70px;
+      right: -320px;
+      background: linear-gradient(90deg, #064e3b 0%, #057a3a 100%);
+      color: #ffffff;
+      padding: 10px 14px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      width: 280px;
+    }
+    .toast-game-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: #0d9f4f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 11px;
+      color: white;
+      flex-shrink: 0;
+    }
+    .toast-meta-content { flex: 1; font-size: 12px; line-height: 1.4; position: relative; padding-right: 14px; }
+    .toast-user-string { font-weight: 800; color: #fbbf24; }
+    .toast-uid-string { color: #a7f3d0; font-size: 11px; }
+    .toast-amount-string { color: #4ade80; font-weight: 800; font-size: 13px; }
+    .toast-dismiss-chokadi {
+      position: absolute;
+      top: -2px;
+      right: -6px;
+      background: none;
+      border: none;
+      color: #a7f3d0;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="#" class="nav-left-brand" onclick="scrollToTop(); return false;">
+        <div class="logo-circle">PS</div>
+        <h1 class="site-brand-name">PROSAFEYONOGAME</h1>
+      </a>
+      <button class="menu-toggle-btn" onclick="toggleSidebarMenu()">☰</button>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <nav class="sidebar-panel" id="sidebarPanel">
+    <div class="sidebar-header">
+      <span class="sidebar-title">Menu Options</span>
+      <button class="sidebar-close" onclick="toggleSidebarMenu()">&times;</button>
+    </div>
+    <button class="sidebar-link" onclick="handleLegalDisplay('home')">🏡 Home Dashboard</button>
+    <a href="https://t.me/invitnew" target="_blank" class="sidebar-link">📢 Telegram Channel</a>
+    <button class="sidebar-link" onclick="handleLegalDisplay('privacy')">🛡️ Privacy Policy</button>
+    <button class="sidebar-link" onclick="handleLegalDisplay('terms')">📄 Terms & Conditions</button>
+    <button class="sidebar-link" onclick="handleLegalDisplay('disclaimer')">🌐 Disclaimer Portal</button>
+  </nav>
+
+  <main>
+    <!-- Legal popup -->
+    <div class="legal-display-card" id="legalDisplayCard">
+      <div class="legal-card-title">
+        <span id="legalTabTitle">Document Title</span>
+        <button class="legal-close-btn" onclick="closeLegalCard()">Close ✕</button>
+      </div>
+      <div class="legal-card-body" id="legalTabBody"></div>
+    </div>
+
+    <h2 class="welcome-heading">WELCOME TO PROSAFEYONOGAME</h2>
+
+    <div class="search-box-wrapper">
+      <input type="text" class="search-input-field" id="gameSearchInput" placeholder="Search premium games here..." onkeyup="filterGameGridList()">
+    </div>
+
+    <!-- Promo strip -->
+    <div class="hero-promo-strip">
+      <div class="promo-left-flex">
+        <div class="promo-gift-badge">🎁</div>
+        <div class="promo-text-wrap">
+          <span class="promo-main-title">Daily Fresh Promo Codes</span>
+          <span class="promo-sub-title">Claim today's active bonus code</span>
+        </div>
+      </div>
+      <a href="promo-code.html" class="promo-get-btn">GET CODE</a>
+    </div>
+
+    <!-- Featured VIP -->
+    <div class="vip-promo-strip search-item" data-name="max rummy">
+      <div class="vip-left">
+        <div class="vip-icon">MAX<br>RUMMY</div>
+        <div class="vip-meta">
+          <div class="vip-badges">
+            <span class="new-badge">⚡ NEW</span>
+            <span class="bind-badge">🚀 BIND BONUS ACTIVE</span>
+          </div>
+          <span class="vip-title">Max Rummy</span>
+        </div>
+      </div>
+      <a href="max-rummy.html" class="get-apk-btn">GET APK</a>
+    </div>
+
+    <div class="vip-promo-strip search-item" data-name="dhan game">
+      <div class="vip-left">
+        <div class="vip-icon">DHAN<br>GAME</div>
+        <div class="vip-meta">
+          <div class="vip-badges">
+            <span class="new-badge">⚡ NEW</span>
+            <span class="bind-badge">🚀 BIND BONUS ACTIVE</span>
+          </div>
+          <span class="vip-title">Dhan Game</span>
+        </div>
+      </div>
+      <a href="dhan-game.html" class="get-apk-btn">GET APK</a>
+    </div>
+
+    <div class="vip-promo-strip search-item" data-name="win rummy">
+      <div class="vip-left">
+        <div class="vip-icon">WIN<br>RUMMY</div>
+        <div class="vip-meta">
+          <div class="vip-badges">
+            <span class="new-badge">⚡ NEW</span>
+            <span class="bind-badge">🚀 BIND BONUS ACTIVE</span>
+          </div>
+          <span class="vip-title">Win Rummy</span>
+        </div>
+      </div>
+      <a href="win-rummy.html" class="get-apk-btn">GET APK</a>
+    </div>
+
+    <!-- All Games Grid -->
+    <div class="section-label">All Premium Games</div>
+    <div class="game-display-grid" id="gameGrid">
+
+      <div class="game-card-node search-item" data-name="max rummy">
+        <div class="game-app-icon">MAX<br>RUMMY</div>
+        <div class="game-app-name">Max Rummy</div>
+        <a href="max-rummy.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="dhan game">
+        <div class="game-app-icon">DHAN<br>GAME</div>
+        <div class="game-app-name">Dhan Game</div>
+        <a href="dhan-game.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="win rummy">
+        <div class="game-app-icon">WIN<br>RUMMY</div>
+        <div class="game-app-name">Win Rummy</div>
+        <a href="win-rummy.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="yono rummy">
+        <div class="game-app-icon">YONO<br>RUMMY</div>
+        <div class="game-app-name">Yono Rummy</div>
+        <a href="yono-rummy.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="spin 777">
+        <div class="game-app-icon">SPIN<br>777</div>
+        <div class="game-app-name">Spin 777</div>
+        <a href="spin-777.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="spin crush">
+        <div class="game-app-icon">SPIN<br>CRUSH</div>
+        <div class="game-app-name">Spin Crush</div>
+        <a href="spin-crush.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="567 slots">
+        <div class="game-app-icon">567<br>SLOTS</div>
+        <div class="game-app-name">567 Slots</div>
+        <a href="567-slots.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="ind rummy">
+        <div class="game-app-icon">IND<br>RUMMY</div>
+        <div class="game-app-name">IND Rummy</div>
+        <a href="ind-rummy.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="inr rummy">
+        <div class="game-app-icon">INR<br>RUMMY</div>
+        <div class="game-app-name">INR Rummy</div>
+        <a href="inr-rummy.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="jaiho 91">
+        <div class="game-app-icon">JAIHO<br>91</div>
+        <div class="game-app-name">Jaiho 91</div>
+        <a href="jaiho-91.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="bingo 101">
+        <div class="game-app-icon">BINGO<br>101</div>
+        <div class="game-app-name">Bingo 101</div>
+        <a href="bingo-101.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="101z">
+        <div class="game-app-icon">101Z</div>
+        <div class="game-app-name">101Z</div>
+        <a href="101-z.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="ind slots">
+        <div class="game-app-icon">IND<br>SLOTS</div>
+        <div class="game-app-name">IND Slots</div>
+        <a href="ind-slots.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="spin 101">
+        <div class="game-app-icon">SPIN<br>101</div>
+        <div class="game-app-name">Spin 101</div>
+        <a href="spin-101.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="ind club">
+        <div class="game-app-icon">IND<br>CLUB</div>
+        <div class="game-app-name">Ind Club</div>
+        <a href="ind-club.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="789 jackpot">
+        <div class="game-app-icon">789<br>JACKPOT</div>
+        <div class="game-app-name">789 Jackpot</div>
+        <a href="789-jackpots.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="jaiho rummy">
+        <div class="game-app-icon">JAIHO<br>RUMMY</div>
+        <div class="game-app-name">Jaiho Rummy</div>
+        <a href="jaiho-rummy.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="hi rummy">
+        <div class="game-app-icon">HI<br>RUMMY</div>
+        <div class="game-app-name">Hi Rummy</div>
+        <a href="hi-rummy.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="gogo rummy">
+        <div class="game-app-icon">GOGO<br>RUMMY</div>
+        <div class="game-app-name">Gogo Rummy</div>
+        <a href="gogo-rummy.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="boss rummy">
+        <div class="game-app-icon">BOSS<br>RUMMY</div>
+        <div class="game-app-name">Boss Rummy</div>
+        <a href="boss-rummy.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="club inr">
+        <div class="game-app-icon">CLUB<br>INR</div>
+        <div class="game-app-name">Club INR</div>
+        <a href="club-inr.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="game rummy">
+        <div class="game-app-icon">GAME<br>RUMMY</div>
+        <div class="game-app-name">Game Rummy</div>
+        <a href="game-rummy.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="rumble rummy">
+        <div class="game-app-icon">RUMBLE<br>RUMMY</div>
+        <div class="game-app-name">Rumble Rummy</div>
+        <a href="rumble-rummy.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="ok rummy">
+        <div class="game-app-icon">OK<br>RUMMY</div>
+        <div class="game-app-name">OK Rummy</div>
+        <a href="ok-rummy.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="spin gold">
+        <div class="game-app-icon">SPIN<br>GOLD</div>
+        <div class="game-app-name">Spin Gold</div>
+        <a href="spin-gold.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="bet 213">
+        <div class="game-app-icon">BET<br>213</div>
+        <div class="game-app-name">Bet 213</div>
+        <a href="bet-213.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="slots winner">
+        <div class="game-app-icon">SLOTS<br>WINNER</div>
+        <div class="game-app-name">Slots Winner</div>
+        <a href="slots-winner.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="neta vip">
+        <div class="game-app-icon">NETA<br>VIP</div>
+        <div class="game-app-name">Neta VIP</div>
+        <a href="neta-vip.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="mbm bet">
+        <div class="game-app-icon">MBM<br>BET</div>
+        <div class="game-app-name">MBM Bet</div>
+        <a href="mbm-bet.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="jaiho win">
+        <div class="game-app-icon">JAIHO<br>WIN</div>
+        <div class="game-app-name">Jaiho Win</div>
+        <a href="jaiho-win.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="abc rummy">
+        <div class="game-app-icon">ABC<br>RUMMY</div>
+        <div class="game-app-name">ABC Rummy</div>
+        <a href="abc-rummy.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="yono vip">
+        <div class="game-app-icon">YONO<br>VIP</div>
+        <div class="game-app-name">Yono VIP</div>
+        <a href="yono-vip.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="rummy 77">
+        <div class="game-app-icon">RUMMY<br>77</div>
+        <div class="game-app-name">Rummy 77</div>
+        <a href="rummy-77.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="yono 777">
+        <div class="game-app-icon">YONO<br>777</div>
+        <div class="game-app-name">Yono 777</div>
+        <a href="yono-777.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="slots spin">
+        <div class="game-app-icon">SLOTS<br>SPIN</div>
+        <div class="game-app-name">Slots Spin</div>
+        <a href="slots-spin.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="jaiho arcade">
+        <div class="game-app-icon">JAIHO<br>ARCADE</div>
+        <div class="game-app-name">Jaiho Arcade</div>
+        <a href="jaiho-arcade.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="jaiho spin">
+        <div class="game-app-icon">JAIHO<br>SPIN</div>
+        <div class="game-app-name">Jaiho Spin</div>
+        <a href="jaiho-spin.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="rummy ludo">
+        <div class="game-app-icon">RUMMY<br>LUDO</div>
+        <div class="game-app-name">Rummy Ludo</div>
+        <a href="rummy-ludo.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="maha game">
+        <div class="game-app-icon">MAHA<br>GAME</div>
+        <div class="game-app-name">Maha Game</div>
+        <a href="maha-game.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="yes spin">
+        <div class="game-app-icon">YES<br>SPIN</div>
+        <div class="game-app-name">Yes Spin</div>
+        <a href="yes-spin.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="yono slots">
+        <div class="game-app-icon">YONO<br>SLOTS</div>
+        <div class="game-app-name">Yono Slots</div>
+        <a href="yono-slots-game.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="rummy 888">
+        <div class="game-app-icon">RUMMY<br>888</div>
+        <div class="game-app-name">Rummy 888</div>
+        <a href="rummy-888.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="jaiho slots">
+        <div class="game-app-icon">JAIHO<br>SLOTS</div>
+        <div class="game-app-name">Jaiho Slots</div>
+        <a href="jaiho-slots.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="yono games">
+        <div class="game-app-icon">YONO<br>GAMES</div>
+        <div class="game-app-name">Yono Games</div>
+        <a href="yono-games.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="top rummy">
+        <div class="game-app-icon">TOP<br>RUMMY</div>
+        <div class="game-app-name">Top Rummy</div>
+        <a href="top-rummy.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="spin winner">
+        <div class="game-app-icon">SPIN<br>WINNER</div>
+        <div class="game-app-name">Spin Winner</div>
+        <a href="spin-winner.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="joy rummy">
+        <div class="game-app-icon">JOY<br>RUMMY</div>
+        <div class="game-app-name">Joy Rummy</div>
+        <a href="joy-rummy.html" class="game-download-btn">Download</a>
+      </div>
+
+      <div class="game-card-node search-item" data-name="love rummy">
+        <div class="game-app-icon">LOVE<br>RUMMY</div>
+        <div class="game-app-name">Love Rummy</div>
+        <a href="love-rummy.html" class="game-download-btn">Download</a>
+      </div>
+
+    </div>
+
+    <!-- Player Guide -->
+    <section class="custom-guide-section">
+      <span class="guide-badge">PLAYER GUIDE</span>
+      <h2 class="guide-title">Start Smart: Tips for New Players</h2>
+      <p class="guide-subtitle">Getting started is simple. Tap through our quick pointers to make your experience smoother.</p>
+      <div class="guide-card-box">
+        <div class="guide-tabs-container">
+          <button class="guide-tab-btn active" onclick="switchGuideTab(event, 'tab-1')">1. Simpler Games</button>
+          <button class="guide-tab-btn" onclick="switchGuideTab(event, 'tab-2')">2. Yono App</button>
+          <button class="guide-tab-btn" onclick="switchGuideTab(event, 'tab-3')">3. Check Reviews</button>
+          <button class="guide-tab-btn" onclick="switchGuideTab(event, 'tab-4')">4. Pace Yourself</button>
+        </div>
+        <div id="tab-1" class="guide-tab-content active">
+          <strong>Begin with Simpler Games:</strong> If you’re new here, start with games that are easy to pick up. Titles like Yono Rummy and card classics have clear instructions and familiar rules.
+        </div>
+        <div id="tab-2" class="guide-tab-content">
+          <strong>Use the New Yono App:</strong> The New Yono App is the quickest way to download your favorites and manage your collection.
+        </div>
+        <div id="tab-3" class="guide-tab-content">
+          <strong>Check Reviews Before You Play:</strong> Every game page has reviews and ratings from other players. Reading these can give you a sense of what to expect.
+        </div>
+        <div id="tab-4" class="guide-tab-content">
+          <strong>Don’t Play Continuously:</strong> Gaming is more fun when you pace yourself. Short breaks keep your mind fresh.
+        </div>
+      </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <div class="custom-disclaimer-box">
+      <div class="disclaimer-header">
+        <span class="disclaimer-icon-frame">ℹ️</span>
+        <span>Platform Disclaimer</span>
+      </div>
+      <p class="disclaimer-text">
+        <strong>PROSAFEYONOGAME</strong> is an independent platform. We don't own, manage, or operate any listed apps. Rummy apps carry financial risks and can be addictive. Please play responsibly, set limits, and stay aware of your habits. Only for users aged 18+.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <nav class="footer-legal-nav">
+      <button class="footer-legal-btn" onclick="handleLegalDisplay('privacy')">Privacy Policy</button>
+      <button class="footer-legal-btn" onclick="handleLegalDisplay('terms')">Terms & Conditions</button>
+      <button class="footer-legal-btn" onclick="handleLegalDisplay('disclaimer')">Disclaimer</button>
+    </nav>
+    <p class="footer-text">&copy; 2026 ProSafe Yono Game Network. All Rights Reserved.<br>Fast Cash Out Verification Active.</p>
+  </footer>
+
+  <button class="back-to-top-btn" id="scrollTopBtn" onclick="scrollToTop()">⬆</button>
+  <a href="https://t.me/invitnew" target="_blank" class="telegram-float-anchor">✈</a>
+
+  <!-- Toast -->
+  <div id="win-notification-toast">
+    <div class="toast-game-avatar" id="toast-icon-target">WIN</div>
+    <div class="toast-meta-content">
+      <button class="toast-dismiss-chokadi" onclick="dismissToast()">✕</button>
+      <span class="toast-user-string" id="toast-user-target">Abh***jit</span>
+      <span class="toast-uid-string">(UID:<span id="toast-uid-target">26746767</span>)</span><br>
+      Win: <span class="toast-amount-string" id="toast-amount-target">3,000.00</span>
+    </div>
+  </div>
+
+  <script>
+    const legalData = {
+      privacy: {
+        title: "🛡️ Privacy Policy",
+        text: `Welcome to ProSafe Yono Game. Your privacy is important to us.\n\nWe do not collect any personal information from users. We do not require you to provide personal data to access the website.\n\nCookies may be used to enhance experience. Third-party links are not controlled by us.\n\nWe may update this policy from time to time.`
+      },
+      terms: {
+        title: "📄 Terms & Conditions",
+        text: `By accessing this website you agree to these terms.\n\nUse the website for lawful purposes only. All content is property of the platform.\n\nWe are not responsible for third-party apps or websites linked here.\n\nLimitation of liability applies to the fullest extent permitted by law.`
+      },
+      disclaimer: {
+        title: "🌐 Disclaimer",
+        text: `Information on this site is for general informational purposes only.\n\nWe do not own or operate any listed apps. Gaming and betting involve financial risk. Play only with money you can afford to lose.\n\nUse of this website is entirely at your own risk. Only for users aged 18+.`
+      }
+    };
+
+    const winners = [
+      { name: "Abh***jit", uid: "26746767", amount: "3,000.00" },
+      { name: "Raj***esh", uid: "84920481", amount: "1,500.00" },
+      { name: "Vik***as", uid: "55610293", amount: "4,800.00" },
+      { name: "Ami***kumar", uid: "10394827", amount: "5,400.00" },
+      { name: "Priy***anka", uid: "77294019", amount: "2,200.00" }
+    ];
+
+    let toastTimer;
+
+    function toggleSidebarMenu() {
+      const s = document.getElementById('sidebarPanel');
+      s.style.right = (s.style.right === "0px") ? "-280px" : "0px";
+    }
+
+    function handleLegalDisplay(key) {
+      const card = document.getElementById('legalDisplayCard');
+      if (key === 'home') {
+        card.style.display = "none";
+        toggleSidebarMenu();
+        scrollToTop();
+        return;
+      }
+      const rec = legalData[key];
+      if (rec) {
+        document.getElementById('legalTabTitle').innerText = rec.title;
+        document.getElementById('legalTabBody').innerText = rec.text;
+        card.style.display = "block";
+        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (document.getElementById('sidebarPanel').style.right === "0px") toggleSidebarMenu();
+      }
+    }
+
+    function closeLegalCard() {
+      document.getElementById('legalDisplayCard').style.display = "none";
+    }
+
+    function filterGameGridList() {
+      const q = document.getElementById('gameSearchInput').value.toLowerCase();
+      document.querySelectorAll('.search-item').forEach(el => {
+        const name = (el.getAttribute('data-name') || el.querySelector('.game-app-name')?.innerText || '').toLowerCase();
+        el.style.display = name.includes(q) ? "" : "none";
+      });
+    }
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.onscroll = function() {
+      const btn = document.getElementById('scrollTopBtn');
+      btn.style.display = (document.documentElement.scrollTop > 300) ? "flex" : "none";
+    };
+
+    function switchGuideTab(e, id) {
+      document.querySelectorAll('.guide-tab-content').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('.guide-tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      e.currentTarget.classList.add('active');
+    }
+
+    function showToast() {
+      const t = document.getElementById('win-notification-toast');
+      const d = winners[Math.floor(Math.random() * winners.length)];
+      document.getElementById('toast-user-target').innerText = d.name;
+      document.getElementById('toast-uid-target').innerText = d.uid;
+      document.getElementById('toast-amount-target').innerText = d.amount;
+      t.style.right = "14px";
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => { t.style.right = "-320px"; }, 4000);
+    }
+
+    function dismissToast() {
+      clearTimeout(toastTimer);
+      document.getElementById('win-notification-toast').style.right = "-320px";
+    }
+
+    setInterval(showToast, 10000);
+  </script>
+</body>
+</html>
