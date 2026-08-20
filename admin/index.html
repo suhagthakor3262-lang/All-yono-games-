@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Admin Panel</title>
+
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+  <div class="admin-container">
+
+    <header class="admin-header">
+      <h1>Admin Panel</h1>
+      <p>Manage your website posts</p>
+    </header>
+
+    <main class="admin-main">
+
+      <section class="post-editor">
+
+        <h2>Edit Post</h2>
+
+        <label for="postTitle">Post Title</label>
+        <input
+          type="text"
+          id="postTitle"
+          placeholder="Enter post title"
+        >
+
+        <label for="postDescription">Post Description</label>
+        <textarea
+          id="postDescription"
+          rows="8"
+          placeholder="Enter post description"
+        ></textarea>
+
+        <div class="button-group">
+          <button id="savePost">Save Post</button>
+          <button id="clearPost">Clear</button>
+        </div>
+
+        <p id="statusMessage"></p>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="admin.js"></script>
+
+</body>
+</html>
