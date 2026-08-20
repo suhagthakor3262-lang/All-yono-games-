@@ -1,1 +1,9 @@
-
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Sample Post",
+      "description": "This is a sample post. You can edit this content from the admin panel."
+    }
+  ]
+}
