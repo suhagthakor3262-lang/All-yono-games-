@@ -1,1 +1,129 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #172033;
+}
+
+.admin-container {
+  min-height: 100vh;
+}
+
+.admin-header {
+  background: #0d6efd;
+  color: white;
+  padding: 25px 20px;
+  text-align: center;
+}
+
+.admin-header h1 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.admin-header p {
+  opacity: 0.9;
+}
+
+.admin-main {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+.post-editor {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.post-editor h2 {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin: 15px 0 7px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ccd3df;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #0d6efd;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#savePost {
+  background: #0d6efd;
+  color: white;
+}
+
+#clearPost {
+  background: #e9edf3;
+  color: #172033;
+}
+
+#savePost:hover {
+  background: #0b5ed7;
+}
+
+#clearPost:hover {
+  background: #dce2ea;
+}
+
+#statusMessage {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .admin-header h1 {
+    font-size: 24px;
+  }
+
+  .post-editor {
+    padding: 18px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
